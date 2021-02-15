@@ -15,6 +15,7 @@ Search-ADAccount -UsersOnly -AccountInactive -TimeSpan 90.00:00:00 | Select-Obje
  Search-ADAccount -ComputersOnly -AccountInactive -TimeSpan 120.00:00:00 | Select-Object Name,LastLogonDate | Sort-Object LastLogonDate
  ```
 <br/>
+
 #Find user accounts that are disabled
 ```powershell
 Search-ADAccount -UsersOnly -AccountDisabled | Select-Object SamAccountName
