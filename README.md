@@ -1,5 +1,5 @@
 # ADPowershell-Commands
-Helpful Powershell commands for Active Directory
+Helpful Powershell commands to check status of user and computer accounts on Active Directory
 
 #You may need to set your execution policy if these commands won't work
 ```powershell 
@@ -21,5 +21,6 @@ Search-ADAccount -UsersOnly -AccountDisabled | Select-Object SamAccountName
 ```powershell
 Search-ADaccount -UsersOnly -PasswordNeverExpires | select-object SamAccountName
 ```
-
+<br/>
+<br/>
 <i>#If you want to save results from any of these commands to a file add  "| -Path c:\OldAccounts.csv" to the end w/o quotes</i><br/>
