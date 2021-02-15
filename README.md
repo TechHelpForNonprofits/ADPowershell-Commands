@@ -9,8 +9,8 @@ Set-ExecutionPolicy -ExecutionPolicy -Bypass
 ```powershell
 Search-ADAccount -UsersOnly -AccountInactive -TimeSpan 90.00:00:00 | Select-Object Name,LastLogonDate | Sort-Object LastLogonDate
 ```
-#If you want to save to a file you would add  "| -Path c:\OldAccounts.csv" to the end w/o quotes
-
+<i>#If you want to save to a file you would add  "| -Path c:\OldAccounts.csv" to the end w/o quotes</i>
+<br>
 #Find user accounts that are disabled
 ```powershell
 Search-ADAccount -UsersOnly -AccountDisabled | Select-Object SamAccountName
