@@ -22,4 +22,4 @@ Search-ADAccount -UsersOnly -AccountDisabled | Select-Object SamAccountName
 Search-ADaccount -UsersOnly -PasswordNeverExpires | select-object SamAccountName
 ```
 
-<i>#If you want to save to a file you would add  "| -Path c:\OldAccounts.csv" to the end w/o quotes</i><br/>
+<i>#If you want to save results from any of these commands to a file add  "| -Path c:\OldAccounts.csv" to the end w/o quotes</i><br/>
