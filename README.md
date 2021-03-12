@@ -1,4 +1,4 @@
-# ADPowershell-Commands
+# AD-Powershell
 Helpful Powershell commands to check status of user and computer accounts on Active Directory
 <br/>
 <br/>
@@ -26,3 +26,29 @@ Search-ADaccount -UsersOnly -PasswordNeverExpires | select-object SamAccountName
 <br/>
 <br/>
 <i>#If you want to save results from any of these commands to a file add  "| -Path c:\OldAccounts.csv" to the end w/o quotes</i><br/>
+<br/>
+
+# Exchange-Online
+Helpful Powershell commands for Exchange Online
+<br/>
+<br/>
+#Request Windows PowerShell credentials, you'll be requested to enter credentials that have access to Exchange Online
+```powershell
+$Cred = Get-Credential
+```
+#Creates a session with Exchange Online (command is one line)
+```powershell
+$Session = New-PSSession -ConfigurationName Microsoft.Exchange -ConnectionUri https://outlook.office365.com/PowerShell-liveid/ -Credential $Cred -Authentication Basic –AllowRedirection
+```
+#Connect to Exchange Online
+```powershell
+Import-PSSession $Session -DisableNameChecking
+```
+#Get a list of users that have full access to other mailboxes
+```powershell
+Get-Mailbox -resultsize unlimited | Get-MailboxPermission| where {($_.accessrights -contains "Fullaccess")}  | Select AccessRights,Deny,InheritanceType,User,Identity,IsInherited
+```
+#Don't forget to end the Exchange Online session when you're done
+```powershell
+Remove-PSSession$Session
+```
